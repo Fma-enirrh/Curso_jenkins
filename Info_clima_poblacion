@@ -1,7 +1,7 @@
 pipeline
 {
   agent any
-  environmet
+  environment
   {
     clima = Soleado
     poblacion = 1000
