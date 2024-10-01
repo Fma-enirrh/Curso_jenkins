@@ -1,0 +1,20 @@
+pipeline
+{
+  agent any
+  environmet
+  {
+    clima = Soleado
+    poblacion = 1000
+  }
+  stages
+  {
+    stage("Info)
+    {
+      steps
+      {
+        println "Clima actual: ${clima}"
+        println "Población actual: ${poblacion}"
+      }
+    }
+  }
+}
