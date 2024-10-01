@@ -3,8 +3,8 @@ pipeline
   agent any
   environment
   {
-    clima = Soleado
-    poblacion = 1000
+    clima = "Soleado"
+    poblacion = "1000"
   }
   stages
   {
