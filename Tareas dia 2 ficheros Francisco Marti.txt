@@ -1,0 +1,111 @@
+
+pipeline
+{
+    agent any
+    environment
+    {
+        numero1 = 50
+        numero2 = 20
+    }
+    stages
+    {
+        stage("Crear el TXT")
+        {
+            steps
+            {
+                script
+                {
+                    fecha = new Date().format("dd/MM/yyyy")
+                    string = "Contenido del nuevo fichero ${fecha}"
+                    writeFile(file: "C:\\Trabajo\\Fichero_Salida\\", text: string)
+                    println("Fichero creado")
+                }
+            }
+        }
+        stage ("Suma")
+        {
+            steps
+            {
+                script
+                {
+                    suma = numero1.toInteger() + numero2.toInteger()
+                    println "La suma de ${env.numero1} mas ${env.numero2} es: ${suma}"
+                }
+            }
+        }
+        
+        stage("Resta")
+        {
+            steps
+            {
+                script
+                {
+                    resta = numero1.toInteger() - numero2.toInteger()
+                    println "La resta de ${env.numero1} menos ${env.numero2} es: ${resta}"
+                }
+            }
+        }
+        
+        stage("Division")
+        {
+            steps
+            {
+                script
+                {
+                    if (numero1 != 0 && numero2 != 0)
+                    //if (numero1 == 0 || numero2 == 0)
+                    {
+                        println "Numero 1 igual a: ${env.numero1}"
+                        println "Numero 2 igual a: ${env.numero2}"
+                        divi = numero1.toInteger() / numero2.toInteger()
+                        println "La division de ${env.numero1} entre ${env.numero2} es igual a: ${divi}"
+                    }
+                    else
+                    {
+                        println "Numero 1 igual a: ${env.numero1}"
+                        println "Numero 2 igual a: ${env.numero2}"
+                        println "Uno de los dos numeros es 0, no se va a realizar la division"
+                    }
+                }
+            }
+        }
+        
+        stage("Multiplicacion")
+        {
+            steps
+            {
+                script
+                {
+                    multi = numero1.toInteger() * numero2.toInteger()
+                    println "La multiplicaion de ${env.numero1} por ${env.numero2} es igual a: ${multi}"
+                }
+            }
+        }
+        
+        stage("Potencia")
+        {
+            steps
+            {
+                script
+                {
+                    potencia = numero1.toInteger() * numero1.toInteger()
+                    println "La potencia de ${env.numero1} es igual a: ${env.potencia}"
+                }
+            }
+        }
+        
+        stage("Escritura en el fichero")
+        {
+            steps
+            {
+                script
+                {
+                    fecha = new Date().format("dd/MM/yyyy")
+                    string = "Resultados de las operaciones: suma: ${suma}, resta: ${resta}, multiplicación ${multi}, división: ${divi} y potencia: ${potencia}"
+                    writeFile(file: "C:\\Trabajo\\Fichero_Salida\\", text: string)
+                    println("Fichero modificado con los resultados")
+                }
+            }
+        }
+    }
+}
