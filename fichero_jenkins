@@ -23,5 +23,6 @@ pipeline
             {
                 println "TEST TODO HA IDO BIEN"
             }
+        }
     }
 }
