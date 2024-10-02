@@ -14,5 +14,14 @@ Una vez generado todo esto, se debe generar un fichero de salida con la informac
 
 pipeline
 {
-    
+    agent any
+    stages
+    {
+        stage("TEST)
+        {
+            script
+            {
+                printl "TEST TODO HA IDO BIEN
+            }
+    }
 }
