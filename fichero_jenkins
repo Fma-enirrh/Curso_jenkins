@@ -38,7 +38,7 @@ pipeline
             {
                 script
                 {
-                    pob_neta = poblacion.toInteger() * 0,8
+                    pob_neta = poblacion.toInteger() * 0.8
                 }
             }
         }
@@ -51,5 +51,8 @@ pipeline
                     cadena = "Ciudad ${ciudad}, Población ${pob_neta}, Clima ${clima} "
                     writeFile (file: "C:\\Users\\117296\\Desktop\\Modelo examen\\Resultados_ciudad_${fecha}.txt", text: cadena )
                     echo "Fichero con los resultados OK"
+                }
+            }
+        }
     }
 }
