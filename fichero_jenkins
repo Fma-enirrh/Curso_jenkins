@@ -12,20 +12,44 @@ Se debe declarar las variables de manera global.
 Una vez generado todo esto, se debe generar un fichero de salida con la información.
 */
 
+def fecha = new Date().format("dd/MM/yyyy")
+def ciudad = "Madrid"
+def poblacion = "100000"
+def clima = "Soleado"
 pipeline
 {
     agent any
     stages
     {
-        stage("TEST")
+        stage("Bienvenida")
         {
             steps
             {
                 script
                 {
-                    println "TEST TODO HA IDO BIEN"
+                    println "Bienvenido! Fecha: ${fecha}"
                 }
             }
         }
+
+        stage("Informacion ciudad y poblacion")
+        {
+            steps
+            {
+                script
+                {
+                    pob_neta = poblacion.toInteger() * 0,8
+                }
+            }
+        }
+        stage("Crear fichero")
+        {
+            steps
+            {
+                script
+                {
+                    cadena = "Ciudad ${ciudad}, Población ${pob_neta}, Clima ${clima} "
+                    writeFile (file: "C:\\Users\\117296\\Desktop\\Modelo examen\\Resultados_ciudad_${fecha}.txt", text: cadena )
+                    echo "Fichero con los resultados OK"
     }
 }
