@@ -13,6 +13,7 @@ Una vez generado todo esto, se debe generar un fichero de salida con la informac
 */
 
 def fecha = new Date().format("dd/MM/yyyy")
+def fecha_txt = new Date().format("dd_MM_yyyy")
 def ciudad = "Madrid"
 def poblacion = "100000"
 def clima = "Soleado"
