@@ -21,7 +21,7 @@ pipeline
         {
             script
             {
-                printl "TEST TODO HA IDO BIEN
+                printl "TEST TODO HA IDO BIEN"
             }
     }
 }
