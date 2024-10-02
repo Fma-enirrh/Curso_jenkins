@@ -50,7 +50,7 @@ pipeline
                 script
                 {
                     cadena = "Ciudad ${ciudad}, Población ${pob_neta}, Clima ${clima} "
-                    writeFile (file: "C:\\Users\\117296\\Desktop\\Modelo examen\\Resultados_ciudad_${fecha}.txt", text: cadena )
+                    writeFile (file: "C:\\Users\\117296\\Desktop\\Modelo examen\\Resultados_ciudad_${fecha_txt}.txt", text: cadena )
                     echo "Fichero con los resultados OK"
                 }
             }
