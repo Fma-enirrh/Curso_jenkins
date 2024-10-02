@@ -19,9 +19,12 @@ pipeline
     {
         stage("TEST")
         {
-            script
+            steps
             {
-                println "TEST TODO HA IDO BIEN"
+                script
+                {
+                    println "TEST TODO HA IDO BIEN"
+                }
             }
         }
     }
